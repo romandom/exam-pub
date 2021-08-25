@@ -19,12 +19,6 @@ import java.util.*;
 public class SummaryService {
 
     @Autowired
-    private ProductRepositary productRepositary;
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
     private OrderRepositary orderRepository;
 
     public Map summaryAll(){

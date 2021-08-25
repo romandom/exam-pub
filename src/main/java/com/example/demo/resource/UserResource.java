@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.example.demo.converter.PersonConvertor;
 import com.example.demo.converter.UserConverter;
+import com.example.demo.domain.dto.PersonDto;
 import com.example.demo.domain.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,9 +27,9 @@ public class UserResource {
 	private UserRepository userRepository;
 	
 	@GetMapping
-	public List<UserDto> getAllUsers()
+	public List<PersonDto> getAllUsers()
 	{
-		return userRepository.findAll().stream().map(UserConverter::toDto).collect(Collectors.toList());
+		return userRepository.findAll().stream().map(PersonConvertor::toDto).collect(Collectors.toList());
 	}
 
 	@GetMapping("/{id}")
